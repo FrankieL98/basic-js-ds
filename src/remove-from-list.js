@@ -29,20 +29,17 @@ function removeKFromList(l, k) {
     if (l.next && !l.next.next) {
       prevLast = l;
     }
-
     if (l.value === k && l.next) {
       l.value = l.next.value;
       l.next = l.next.next;
     } else {
       l = l.next;
     }
-
-    if (prevLast.next.value === k) {
-      prevLast.next = null;
-    }
-
-    return HEAD;
   }
+  if (prevLast.next.value === k) {
+    prevLast.next = null;
+  }
+  return HEAD;
 }
 
 module.exports = {
